@@ -1,8 +1,8 @@
 clear
-
+IP=$1
 function status-fc
 {	clear
-	status=$(curl http://192.168.0.52/background_play_status | awk -F '[<>]' '/sid/{print $7}')
+	status=$(curl http://$IP/background_play_status | awk -F '[<>]' '/sid/{print $7}')
 	clear
 	sleep 3
 	echo $status
@@ -17,7 +17,7 @@ function status-fc
 function off
 {
 	CHOICE=0
-	status=$(curl http://192.168.0.52/background_play_status 2>/dev/null | awk -F '[<>]' '/sid/{print $7}')
+	status=$(curl http://$IP/background_play_status 2>/dev/null | awk -F '[<>]' '/sid/{print $7}')
 
 	     until [ "$CHOICE" = "2" ]; do
 			 clear
@@ -32,7 +32,7 @@ function off
   		      case $CHOICE in
      		   	1)
 					clear
-       		 		curl http://192.168.0.52/Sendkey?key=7
+       		 		curl http://$IP/Sendkey?key=7
 					clear
        		 		sleep 2
 					status-fc
@@ -49,7 +49,7 @@ function on
 {
 	CHOICE=0
 	clear
-	volume=$(curl http://192.168.0.52/background_play_status | awk -F '[<>]' '/vol/{print $15}')
+	volume=$(curl http://$IP/background_play_status | awk -F '[<>]' '/vol/{print $15}')
 	clear
 	sleep 1
           until [ "$CHOICE" = "4" ]; do
@@ -67,19 +67,19 @@ function on
 			case $CHOICE in
 				1)
 					clear
-					curl http://192.168.0.52/Sendkey?key=7
+					curl http://$IP/Sendkey?key=7
 					clear
 					status-fc
 					;;
 				2)
 					clear
-					curl http://192.168.0.52/Sendkey?key=9
+					curl http://$IP/Sendkey?key=9
 					clear
 					status-fc
 					;;
 				3)
 					clear
-					curl http://192.168.0.52/Sendkey?key=10
+					curl http://$IP/Sendkey?key=10
 					clear
 					status-fc
 					;;
