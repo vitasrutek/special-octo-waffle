@@ -30,3 +30,7 @@ $ curl http://$IP/Sendkey?key=7
 # This is for turning on / off my device, but other Sendkey values do different things like change dimmer,
 # change favorite station etc., but for my purpose this is enough.
 ```
+
+```bash
+#!/bin/bash is missing because of using script in Termux on Android.
+```
