@@ -27,5 +27,6 @@ $ ./radio.sh 192.168.0.52
 
 ```bash
 $ curl http://$IP/Sendkey?key=7
-# This is for turning on / off my device, but other Sendkey values do different things like change dimmer, change favorite station etc., but for my purpose this is enough.
+# This is for turning on / off my device, but other Sendkey values do different things like change dimmer,
+# change favorite station etc., but for my purpose this is enough.
 ```
