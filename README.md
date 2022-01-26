@@ -10,3 +10,15 @@ I wanted to use this feature to automate radio turning on / off when I am home o
 
 AirMusic uses more manufactures such as Audizio, Sencor, Silvercrest, GoGen.
 
+## How To Use
+
+```bash
+# Clone this repository
+$ git clone https://github.com/vitasrutek/special-octo-waffle
+
+# Go into the repository
+$ cd special-octo-waffle
+
+# Run with device IP address
+$ ./radio.sh 192.168.0.52
+```
